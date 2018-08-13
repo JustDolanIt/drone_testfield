@@ -2,6 +2,7 @@ pipeline:
   test:
     image: alpine
     commands:
-      - apk add jq
+      - apk add jq git
       - ls -l
+      - git show
       - jq '.' test.json
