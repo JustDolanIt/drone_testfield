@@ -3,4 +3,5 @@ pipeline:
     image: alpine
     commands:
       - apk add jq
+      - ls -l
       - jq '.' test.json
