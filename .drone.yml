@@ -1,8 +1,12 @@
 pipeline:
-  test:
-    image: alpine
+  gitdiff:
+    image: alpine/git
     commands:
       - apk add jq git
-      - ls -l
       - git show
+
+  lint:
+    image: alpine
+    commands:
+      - apk add jq
       - jq '.' test.json
