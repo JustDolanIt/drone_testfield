@@ -2,7 +2,6 @@ pipeline:
   gitdiff:
     image: alpine/git
     commands:
-      - apk add jq git
       - git show
 
   lint:
