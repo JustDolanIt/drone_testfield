@@ -14,6 +14,4 @@ pipeline:
     image: validator/validator
     commands:
       - pwd
-      - ls *.html
-      - ls \*.html
-      - java -jar /vnu.jar \*.html
+      - ls *.html | xargs -I {} java -jar /vnu.jar {}
