@@ -247,5 +247,5 @@ else:
 
 connection.close()
 
-if 'Error:' in cleared_response:
+if b'Error:' in cleared_response:
   sys.exit(1)
