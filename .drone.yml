@@ -11,6 +11,6 @@ pipeline:
       - jq '.' test.json
 
   html_validator:
-    image: validator/validator/
+    image: validator/validator
     commands:
       - java -jar ~/vnu.jar *.html
