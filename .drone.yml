@@ -11,7 +11,8 @@ pipeline:
       - jq '.' test.json
 
   html_validator:
-    image: validator/validator
+    image: python:alpine
     commands:
       - pwd
-      - ls *.html | xargs -I {} java -jar /vnu.jar {}
+      - wget https://raw.githubusercontent.com/mozilla/html5-lint/master/html5check.py
+      - ls *.html | xargs -I {} python html5check.py -h {}
