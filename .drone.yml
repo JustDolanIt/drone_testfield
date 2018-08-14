@@ -15,3 +15,5 @@ pipeline:
     commands:
     - export GLOBAL_ERROR_CODE=0
     - ls *.html | xargs -I {} ash -c 'echo -- {}; python html5check.py -h {}; export TEMP=$?; echo Error code - $TEMP; export GLOBAL_ERROR_CODE=$(( GLOBAL_ERROR_CODE + $TEMP )); echo'
+    - echo GLOBAL_ERROR_CODE == $GLOBAL_ERROR_CODE
+    - exit $GLOBAL_ERROR_CODE
