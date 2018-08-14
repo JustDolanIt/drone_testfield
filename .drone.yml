@@ -1,7 +1,16 @@
 pipeline:
-  test:
+  git_diff:
+    image: alpine/git
+    commands:
+      - git show
+
+  js_lint:
     image: alpine
     commands:
       - apk add jq
-      - ls -l
       - jq '.' test.json
+
+  html_validator:
+    image: validator/validator
+    commands:
+      - java -jar /vnu.jar *.html
