@@ -13,4 +13,4 @@ pipeline:
   html_validator:
     image: validator/validator
     commands:
-      - java -jar /vnu.jar *.html
+      - java -jar /vnu.jar \*.html
