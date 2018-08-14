@@ -15,4 +15,4 @@ pipeline:
     commands:
       - pwd
       - wget https://raw.githubusercontent.com/mozilla/html5-lint/master/html5check.py
-      - ls *.html | xargs -I {} python html5check.py -h {}
+      - ls *.html | xargs -I {} bash -c 'echo --> {}; python html5check.py -h {}; echo'
