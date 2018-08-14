@@ -13,6 +13,4 @@ pipeline:
   html_validator:
     image: python:alpine
     commands:
-      - pwd
-      - wget https://raw.githubusercontent.com/mozilla/html5-lint/master/html5check.py
-      - ls *.html | xargs -I {} ash -c 'echo -- {}; python html5check.py -h {}; echo'
+    - ls *.html | xargs -I {} ash -c 'echo -- {}; python html5check.py -h {}; echo Error code: $?; echo'
